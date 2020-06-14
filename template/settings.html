@@ -1,0 +1,40 @@
+<h1>修改帳號</h1>
+<form id="reg" action="settings.php" method="post" onsubmit="return check();">
+    <label for="uacc">*使用者帳號:</label><br>
+    <input type="text" name="useracc" id="uacc" value="{{userid}}" disabled>
+    <small id="accerr" style="color:#f00;display: none;"><br>必填欄位</small>
+    <br>
+    <label for="uname">*使用者名稱:</label><br>
+    <input type="text" name="uname" id="uname" value="{{username}}">
+    <small id="nameerr" style="color:#f00;display: none;"><br>必填欄位</small>
+    <br>
+    <label for="upass">密碼(不輸入表示不更動):</label><br>
+    <input type="password" name="password" id="upass">
+    <small id="pwderr" style="color:#f00;display: none;"><br>需要8個字元</small>
+    <br>
+    <label for="cpass">確認密碼:</label><br>
+    <input type="password" name="cpassword" id="cupass">
+    <small id="cpwderr" style="color:#f00;display: none;"><br>密碼不一致</small>
+    <br>
+    <input type="submit" value="修改" id="loginbtn">
+</form>
+
+<a href="../admin/accounts.php" style="display: {{admin}};">管理其他帳號?按我</a>
+
+<script type="text/javascript">
+    form = document.getElementById("reg");
+function check() {
+    if (form.uname.value == "") {
+        document.getElementById("nameerr").style.removeProperty('display');
+        form.uname.focus();
+    } else if (form.password.value.length < 8 && form.password.value.length > 0) {
+        document.getElementById("pwderr").style.removeProperty('display');
+        form.password.focus();
+    } else if (form.password.value != form.cpassword.value) {
+        document.getElementById("cpwderr").style.removeProperty('display');
+    } else {
+        return true;
+    }
+    return false;
+}
+</script>

@@ -1,0 +1,50 @@
+<style>
+    table {
+        width: 500px;
+        text-align: left;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    td {
+        border-top: 1px solid;
+    }
+    th, td {
+        border-left: 1px solid;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>帳號</th>
+            <th>暱稱</th>
+            <th width="100px">操作</th>
+            <th width="100px">管理權限</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{users}}
+    </tbody>
+</table>
+<p style="color: red;">
+    重要! 至少保持一個擁有管理權限的帳號<br>
+    以管理員身分登入到登出前，一直都會是管理員，不論其他管理員是否撤銷他的權限
+</p>
+
+<script type="text/javascript">
+    function delacc(a) {
+        cf = confirm("確定要刪除?");
+        if (cf) {
+            window.location = "modacc.php?op=del&uid="+a;
+        }
+    }
+
+    function setadmin(a) {
+        window.location = "modacc.php?op=setadmin&uid="+a+"&admin=1";
+    }
+
+    function deadmin(a) {
+        window.location = "modacc.php?op=setadmin&uid="+a+"&admin=0";
+    }
+</script>

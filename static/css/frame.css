@@ -1,0 +1,41 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+}
+
+nav p {
+    float: left;
+    margin-right: 12px;
+}
+
+.container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul > li {
+    float: left;
+    /* border-right: 1px solid  #7f7f7f; */
+    /* border-top: 2px solid #00000000; */
+}
+
+nav ul > li > a{
+    display: block;
+    /* color: #646464; */
+    text-align: center;
+    padding: 5px 12px;
+    text-decoration: none;
+    margin: 11px auto;
+}

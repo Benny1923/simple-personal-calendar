@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人日曆</title>
+    <link rel="stylesheet" href="{{css}}">
+</head>
+<body>
+     <nav class="navbar">
+         <div class="container">
+             <p>個人行事曆</p>
+             <ul>
+                 <li><a href="{{homepage}}">首頁</a></li>
+                 <li><a href="{{calendar}}">行事曆</a></li>
+                <li style="float:right; display:{{lout}};"><a href="{{logout}}">登出</a></li>
+                 <li style="float:right;"><a href="{{login}}">{{user}}</a></li>
+             </ul>
+         </div>
+     </nav>
+     <div class="container">
+         {{container}}
+     </div>
+</body>
+</html>
