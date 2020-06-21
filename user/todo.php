@@ -41,7 +41,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     //$list .= "<td>".."</td>";
     $list .= "<td>".explode(' ', $row['etime'])[1]."</td>";
     if ($row['level'] == 1) {
-        $list .= "<td>重要ㄋ</td>";
+        $list .= "<td>重要</td>";
     } else if ($row['level'] == 2) {
         $list .= "<td>普通</td>";
     } else {
