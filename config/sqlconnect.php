@@ -2,8 +2,8 @@
 
 $server="127.0.0.1";
 $port="3306";
-$username="admin";
-$password="admin";
+$username="root";
+$password="1234";
 $dbname="spclander";
 
 @$con = new mysqli($server,$username,$password,$dbname,$port);
