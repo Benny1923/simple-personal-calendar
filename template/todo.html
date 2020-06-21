@@ -1,0 +1,73 @@
+<div class="ec">
+    <div class="et">
+        <table class="events">
+            <thead>
+                <tr>
+                    <th style="width: 90px;">時間</th>
+                    <th style="width: 90px;">優先度</th>
+                    <th>描述</th>
+                    <th style="width: 100px;">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{events}}
+            </tbody>
+        </table>
+    </div>
+    <div class="ef">
+        <h3>新增</h3>
+        <form action="" method="post" id="newevent">
+            <input type="hidden" name="act" value="add">
+            <label for="time">時間:</label>
+            <input type="time" name="time" id="" required><br>
+            <label for="level">優先度:</label>
+            <select name="level" id="" required>
+                <option value="1">重要</option>
+                <option value="2">普通</option>
+                <option value="3" selected>提醒</option>
+            </select><br>
+            <label for="descr">描述:</label><br>
+            <textarea name="descr" id="" cols="30" rows="10" required></textarea><br>
+            <input type="submit" value="新增">
+        </form>
+    </div>
+</div>
+
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var now = new Date();
+        $("#newevent")[0].time.value = ("0"+now.getHours()).slice(-2)+":"+("0"+now.getMinutes()).slice(-2);
+    })
+</script>
+
+<style>
+    .events {
+        border: 1px solid;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .events th, .events td {
+        border: 1px solid;
+    }
+
+    .events td {
+        border-top: 1px solid;
+    }
+
+    .et {
+        float: left;
+        width: 48%;
+        margin: 5px;
+    }
+    .ef {
+        float: left;
+        margin: 5px;
+        width: 48%;
+    }
+
+    .ef form {
+        width: 100%;
+    }
+</style>

@@ -1,1 +1,62 @@
-this is a calendar page
+<style>
+    table {
+        margin: 0px auto;
+        width: 1000px;
+        border-collapse: collapse;
+        border: 1px solid;
+    }
+    th,td {
+        border: 1px solid;
+    }
+    td {
+        height: 143px;
+        vertical-align: top;
+        width: 14.2%;
+    }
+
+    .title > a{
+        font-size: medium;
+        text-decoration: none;
+        border: 1px solid #dfdfdf;
+        border-radius: 5px;
+        padding: 3px;
+        background-color: #dfdfdf;
+        color: rgb(121, 156, 255);
+    }
+
+    .notify :visited, .notify {
+        color: white;
+    }
+    .l1 div {
+        background-color: #ff2c2c;
+    }
+    .l2 div {
+        background-color: #7eca8f;
+    }
+    .l3 div {
+        background-color: #79b8ff;
+    }
+</style>
+
+    <h1 class="title">{{yearandmonth}}
+        <a href="calendar.php?m={{lastmonth}}">上個月</a>
+        <a href="calendar.php?m={{nextmonth}}">下個月</a>
+    </h1>
+<table>
+    <thead>
+        <tr>
+            <th>日</th>
+            <th>一</th>
+            <th>二</th>
+            <th>三</th>
+            <th>四</th>
+            <th>五</th>
+            <th>六</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- tr*5>td*7 -->
+        <!-- id w*d* -->
+        {{tbody}}
+    </tbody>
+</table>

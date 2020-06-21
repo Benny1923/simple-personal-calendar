@@ -2,6 +2,7 @@
 require_once("../includes/admincheck.php");
 require_once("../config/sqlconnect.php");
 
+//CSRF警告
 if ($_GET['op'] == "del" && !empty($_GET['uid'])) {
     $sql="DELETE FROM users WHERE uid=".$_GET['uid'].";";
 } else if ($_GET['op'] == "setadmin" && !empty($_GET['uid']) && ($_GET['admin'] == 0 || $_GET['admin'] == 1)) {
